@@ -1,8 +1,11 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+
+</script>
 
 <template>
   <div>
-    Page: Index
+    <page-medium></page-medium>
+    <h2>Landing</h2>
   </div>
 </template>
 
