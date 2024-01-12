@@ -5,7 +5,7 @@
   <section>
         <div class="swiper-container swiper-slider swiper-variant-1 bg-black" data-swiper='{"autoplay":{"delay":5500},"effect":"fade","simulateTouch":"true","loop":"false"}'>
           <div class="swiper-wrapper text-center">
-            <div class="swiper-slide" style="background-image: url( images/home-slider-slide-1.webp )">
+            <div class="swiper-slide" style="background-image: url( pageImages/image 1.jpg )">
               <div class="swiper-slide-caption text-center">
                 <div class="container">
                   <div class="row justify-content-md-center">
@@ -21,7 +21,7 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide" style="background-image: url( images/home-slider-slide-2.webp )">
+            <div class="swiper-slide" style="background-image: url( pageImages/image 2.jpg )">
               <div class="swiper-slide-caption text-center">
                 <div class="container">
                   <div class="row justify-content-md-center">
@@ -37,7 +37,7 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide" style="background-image: url( images/home-slider-slide-3.webp )">
+            <div class="swiper-slide" style="background-image: url( pageImages/image 3.jpg )">
               <div class="swiper-slide-caption text-center">
                 <div class="container">
                   <div class="row justify-content-md-center">
