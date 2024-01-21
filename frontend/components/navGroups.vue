@@ -1,60 +1,122 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="rd-navbar-group">
-                <div class="rd-navbar-panel">
-                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-                  <a class="rd-navbar-brand brand" href="">
-                    <img class="lazy-img" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D" 
-                    data-src="images/logo-default-143x27.png" 
-                    alt="" width="143" height="27"/></a>
+  <!----- navbar start  ----->
+  <section class="main-navbar d-sm-none d-md-none d-lg-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="/images/logo.png" alt="logo">
+                    </a>
                 </div>
-                <div class="rd-navbar-nav-wrap">
-                  <div class="rd-navbar-nav-inner">
-                    <div class="rd-navbar-btn-wrap">
-                      <a class="button button-smaller button-primary-outline" 
-                      href="">Appointment</a></div>
-                    <ul class="rd-navbar-nav">
-                      <li class="active">
-                        <nuxt-link to="/">Home</nuxt-link>
-                      </li>
-                      <li>
-                        <nuxt-link to="/about">About</nuxt-link>
-                      </li>
-                      <li><a href="index.html#">Cases</a>
-                        <ul class="rd-navbar-dropdown">
-                          <li><nuxt-link to="/">Gallery Grid</nuxt-link></li>
-                          <li><nuxt-link to="/">Gallery Grid</nuxt-link></li>
-                          <li><nuxt-link to="/">Gallery Grid</nuxt-link></li>
-                        </ul>
-                      </li>
-                      <li><a href="index.html#">Pages</a>
-                        <ul class="rd-navbar-megamenu">
-                          <li>
-                            <h5 class="rd-megamenu-header">Cases Heading</h5>
-                            <ul class="rd-navbar-list">
-                              <li><nuxt-link to="/">Case 1</nuxt-link></li>
-                              <li><nuxt-link to="/">Case 2</nuxt-link></li>
-                              <li><nuxt-link to="/">Case 3</nuxt-link></li>
-                              <li><nuxt-link to="/">Case 4</nuxt-link></li>
-                              <li><nuxt-link to="/">End Final</nuxt-link></li>
+            </div>
+            <!-- MAIN MENU -->
+            <div class="col-lg-10 d-flex align-items-center justify-content-end">
+                <nav class="main_menu">
+                    <ul class="sub-menu">
+                        <li><a class="active" href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Service</a>
+                            <ul class="sub-menu">
+                                <li><a href="service.html">Service</a></li>
+                                <li><a href="service_details.html">Service Details</a></li>
                             </ul>
-                            <h5 class="rd-megamenu-header">Paging Head</h5>
-                            <ul class="rd-navbar-list">
-                              <li><nuxt-link to="/">Links Paging</nuxt-link></li>
-                              <li><nuxt-link to="/">Links Paging</nuxt-link></li>
-                              <li><nuxt-link to="/">Links Paging</nuxt-link></li>
-                              <li><nuxt-link to="/">Links Paging</nuxt-link></li>
-                              <li><nuxt-link to="/">Links Paging</nuxt-link></li>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Project</a>
+                            <ul class="sub-menu">
+                                <li><a href="project.html">Project</a></li>
+                                <li><a href="project_details.html">Project Details</a></li>
                             </ul>
-                          </li>
-                        </ul>
-                      </li>
-                      <li><nuxt-link to="/contact">Contact Us</nuxt-link></li>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Pages</a>
+                            <ul class="sub-menu">
+                                <li><a href="faq.html">Faq</a></li>
+                                <li><a href="pricing.html">Pricing</a></li>
+                                <li><a href="career.html">Career</a></li>
+                                <li><a href="erorr.html">Erorr</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a href="#">Blog</a>
+                            <ul class="sub-menu">
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="blog_details.html">Blog Details</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+
+                        <!------- search popup start ------->
+                        <!-- <li>
+                            <a class="btn btn-primary popup-btn" data-bs-toggle="modal" href="#searchModalToggle" role="button"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        </li>                            -->
                     </ul>
-                  </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- MOBILE MENU Logo AREA -->
+<section class="mobile_logo_area d-sm-block d-md-block d-lg-none">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="mobile_menu_logo text-center">
+                    <a href="index.html" title="logo">
+                        <img src="/images/logo.png" alt="Logo" />
+                    </a>
                 </div>
-              </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- MOBILE MENU AREA -->
+<section class="mobile-menu-section d-sm-block d-md-none d-lg-none">
+    <div class="menu_area mobile-menu">
+        <nav class="mobile_menu">
+            <ul class="sub-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="menu-item-has-children">
+                    <a href="#">Service</a>
+                    <ul class="sub-menu">
+                        <li><a href="service.html">Service</a></li>
+                        <li><a href="service_details.html">Service Details</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#">Project</a>
+                    <ul class="sub-menu">
+                        <li><a href="project.html">Project</a></li>
+                        <li><a href="project_details.html">Project Details</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a>Pages</a>
+                    <ul class="sub-menu">
+                        <li><a href="faq.html">Faq</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="career.html">Career</a></li>
+                        <li><a href="erorr.html">Erorr</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children">
+                    <a href="#">Blog</a>
+                    <ul class="sub-menu">
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="blog_details.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</section>
+<!-- END MOBILE MENU AREA  -->
 </template>
 
 <style scoped></style>

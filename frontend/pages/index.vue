@@ -1,12 +1,16 @@
-<script lang="ts" setup>
+<script setup>
+useHead({
+  title: "ICT Commission - Home"
+})
 
 </script>
 
 <template>
-  <div>
-    <page-medium></page-medium>
-    <h2>Landing</h2>
-  </div>
+ <div>
+  <page-medium></page-medium>
+  <feature />
+  <blogPost />
+ </div>
 </template>
 
 <style scoped></style>

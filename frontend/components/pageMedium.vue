@@ -1,64 +1,75 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+
+const slideData = ref([
+  {info:'Site info',
+  title:'Welcome slide',
+  description:'Busto auctor line conubia euismod nicest rhoncus replenish sixth signs <br> behold creeping creature bustro',
+  imagePath:'/images/img1.png',
+  targetPage:'New Page',
+  targetLink:'#',
+  EndLine:'',
+  isActive:true,
+  slideNo:0},
+  {info:'Go beyond Order',
+  title:'Finish your tasks',
+  description:'This site is an official test page',
+  imagePath:'/images/img2.png',
+  targetPage:'Open Page',
+  targetLink:'#',
+  EndLine:'',
+  isActive:false,
+  slideNo:1},
+  {info:'Keep Pushing',
+  title:'Last ride game',
+  description:'When I see you again',
+  imagePath:'/images/img3.png',
+  targetPage:'Open Page',
+  targetLink:'#',
+  EndLine:'',
+  isActive:false,
+  slideNo:2},
+])
+</script>
 
 <template>
-  <!--  Swiper -->
-  <section>
-        <div class="swiper-container swiper-slider swiper-variant-1 bg-black" data-swiper='{"autoplay":{"delay":5500},"effect":"fade","simulateTouch":"true","loop":"false"}'>
-          <div class="swiper-wrapper text-center">
-            <div class="swiper-slide" style="background-image: url( pageImages/image 1.jpg )">
-              <div class="swiper-slide-caption text-center">
-                <div class="container">
-                  <div class="row justify-content-md-center">
-                    <div class="col-md-11 col-lg-10 col-xl-9">
-                      <div class="header-decorated" data-caption-animate="fadeInUp" data-caption-delay="0s">
-                        <h3 class="medium text-primary">With Us</h3>
+ 
+  <!----- slider start ------->
+  <section class="slider">
+      <div class="top-shape"></div>
+      <div class="bottom-shape"></div>
+      <div id="homeCarousel" class="carousel slide">
+          <div class="overlay"></div>
+          <div class="carousel-indicators">
+              <button v-for="item in slideData" :key="item.slideNo" type="button" data-bs-target="#homeCarousel" 
+              :data-bs-slide-to="item.slideNo" :class="{'active':item.isActive}" aria-current="true" :aria-label="'Slide ' + item.slideNo"></button>
+
+          </div>
+          <div class="carousel-inner">
+            <div v-for="item in slideData" :key="item.slideNo" :class="{'active': item.isActive}" class="carousel-item">
+                  <img :src="item.imagePath" class="d-block w-100" alt="...">
+                  <div class="carousel-caption">
+                      <p class="info">{{ item.info }}</p>
+                      <h5 class="title"><a href="#">{{ item.title}}</a></h5>
+                      <p class="desc">{{ item.description }}</p>
+                      
+                      <div class="button-area">
+                          <a class="btn" :href="item.targetLink">{{ item.targetPage }}</a>
+                          <p class="info-bottom">{{ item.EndLine }}</p>
                       </div>
-                      <h2 class="slider-header" data-caption-animate="fadeInUp" data-caption-delay="150">You Are Always One Step Ahead</h2>
-                      <p class="text-bigger slider-text" data-caption-animate="fadeInUp" data-caption-delay="250">Strategies of our attorneys will help you solve very complex legal issues.</p>
-                      <div class="group-xl-responsive offset-top-30 offset-sm-top-45"><a class="button button-lg button-primary-outline-v2" data-caption-animate="fadeInUp" data-caption-delay="400" href="http://livedemo00.template-help.com/wt_61317_v1/appointment.html">Request a Free Consultation</a></div>
-                    </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide" style="background-image: url( pageImages/image 2.jpg )">
-              <div class="swiper-slide-caption text-center">
-                <div class="container">
-                  <div class="row justify-content-md-center">
-                    <div class="col-md-11 col-lg-10 col-xl-9">
-                      <div class="header-decorated" data-caption-animate="fadeInUp" data-caption-delay="0s">
-                        <h3 class="medium text-primary">We Offer</h3>
-                      </div>
-                      <h2 class="slider-header" data-caption-animate="fadeInUp" data-caption-delay="150">Affordable and Effective Legal Help</h2>
-                      <p class="text-bigger slider-text" data-caption-animate="fadeInUp" data-caption-delay="250">Our expert team of attorneys and consultants will be glad to provide necessary legal assistance.</p>
-                      <div class="group-xl-responsive offset-top-30 offset-sm-top-45"><a class="button button-lg button-primary-outline-v2" data-caption-animate="fadeInUp" data-caption-delay="400" href="http://livedemo00.template-help.com/wt_61317_v1/appointment.html">Request a Free Consultation</a></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide" style="background-image: url( pageImages/image 3.jpg )">
-              <div class="swiper-slide-caption text-center">
-                <div class="container">
-                  <div class="row justify-content-md-center">
-                    <div class="col-md-11 col-lg-10 col-xl-9">
-                      <div class="header-decorated" data-caption-animate="fadeInUp" data-caption-delay="0s">
-                        <h3 class="medium text-primary">With Our Services</h3>
-                      </div>
-                      <h2 class="slider-header" data-caption-animate="fadeInUp" data-caption-delay="150">You Will Get Extensive Legal Support</h2>
-                      <p class="text-bigger slider-text" data-caption-animate="fadeInUp" data-caption-delay="250">We have years of experience in providing legal help in various spheres of law.</p>
-                      <div class="group-xl-responsive offset-top-30 offset-sm-top-45"><a class="button button-lg button-primary-outline-v2" data-caption-animate="fadeInUp" data-caption-delay="400" href="http://livedemo00.template-help.com/wt_61317_v1/appointment.html">Request a Free Consultation</a></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
-          <div class="swiper-scrollbar d-lg-none"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
-      </section>
+          <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+          </button>
+      </div>
+  </section>
+  <!-------- slider end -------->
 </template>
 
 <style scoped></style>
