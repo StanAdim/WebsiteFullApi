@@ -7,4 +7,6 @@
   </div>
 </template>
 
-<style scoped></style>
+<style>
+@import '@/assets/css/tailwind.css';
+</style>
