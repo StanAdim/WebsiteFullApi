@@ -4,9 +4,8 @@ definePageMeta({
 })
 </script>
 <template>
-  <div>
-    Page: dashboard
-  </div>
+   <h1 class="text-2xl font-semibold">Dashboard page</h1>
+    <p>Dashboard page</p>
 </template>
 
 <style scoped></style>
