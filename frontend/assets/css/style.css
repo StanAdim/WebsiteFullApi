@@ -995,7 +995,7 @@ table {
     background-color: #fff9f6;
 }
 .about .shape-1{
-    background-image: url('./assets/images/about/shape-1.png');
+    background-image: url('/images/2222.png');
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
@@ -1006,7 +1006,7 @@ table {
     object-fit: cover;
 }
 .about .shape-2{
-    background-image: url('./assets/images/6.png');
+    background-image: url('/images/6.png');
     background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
@@ -1123,7 +1123,8 @@ table {
     font-weight: 700;
     font-size: 18px;
     color: #353535;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    margin-right: 20px;
 }
 .about .image-area .skills-progress .progress-item .progressbar{
     margin-top: 10px;
@@ -1148,7 +1149,7 @@ table {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #da5e21;
+    background-color: #16d0ff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1159,6 +1160,7 @@ table {
     position: absolute;
     top: -7px;
     right: 0;
+    padding:.3rem;
 }
 .about .image-area .video-area{
     height: 220px;
@@ -1238,7 +1240,7 @@ table {
 .team .single-team .team-image{
     width: 100%;
     height: 320px;
-    position: relative;  
+    position: relative;
 }
 .team .single-team .team-image .overlay{
     position: absolute;
@@ -1308,7 +1310,7 @@ table {
     transform: scale(1,1);
 }
 .team .single-team .team-info .team-social li:hover a{
-    background-color: #ff7939;
+    background-color: #12b4dc;
 }
 .team .single-team .team-info .team-social li:hover a{
     color: #16d0ff;
@@ -1323,7 +1325,7 @@ table {
     background-color: #ffffff;
     text-align: center;
     position: absolute;
-    bottom: -20px;
+    bottom: -150px;
     left: 50px;
     right: 50px;
     z-index: 100;
@@ -1331,7 +1333,7 @@ table {
     box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.10);
 }
 .team .single-team:hover .team-info .team-info-inner{
-    bottom: -65px;
+    bottom: -120px;
 }
 .team .single-team .team-info .team-info-inner .name{
     font-family: var(--fontTitle);
@@ -3648,6 +3650,7 @@ table {
 /****** contact start ******/
 .contact{
     padding: 80px 0px;
+    margin-top: .5rem;
     background-color: #ffffff;
 }
 .contact .section-title {

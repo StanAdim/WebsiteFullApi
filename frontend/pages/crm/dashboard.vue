@@ -1,5 +1,8 @@
-<script lang="ts" setup></script>
-
+<script lang="ts" setup>
+definePageMeta({
+  layout: 'auth-layout'
+})
+</script>
 <template>
   <div>
     Page: dashboard

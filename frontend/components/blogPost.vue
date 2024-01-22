@@ -7,7 +7,7 @@ const posts = ref([
     category: 'Software',
     title: 'Develop High End',
     path:'',
-    imagePath: '/images/img3.png'
+    imagePath: '/images/img4.png'
   },
   {
     id: 2,

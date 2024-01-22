@@ -7,29 +7,31 @@
         <div class="row">
             <div class="col-lg-2">
                 <div class="logo">
-                    <a href="index.html">
+                    <router-link to="/">
                         <img src="/images/logo.png" alt="logo">
-                    </a>
+                    </router-link>
                 </div>
             </div>
             <!-- MAIN MENU -->
             <div class="col-lg-10 d-flex align-items-center justify-content-end">
                 <nav class="main_menu">
                     <ul class="sub-menu">
-                        <li><a class="active" href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li>
+                            <router-link class="active" to="/">Home</router-link>
+                        </li>
+                        <li><router-link class="" to="/about">About</router-link></li>
                         <li class="menu-item-has-children">
                             <a href="#">Service</a>
                             <ul class="sub-menu">
-                                <li><a href="service.html">Service</a></li>
-                                <li><a href="service_details.html">Service Details</a></li>
+                                <li><router-link class="" to="">Service</router-link></li>
+                                <li><router-link class="" to="">Service Details</router-link></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="#">Project</a>
+                            <a href="#">Projects</a>
                             <ul class="sub-menu">
-                                <li><a href="project.html">Project</a></li>
-                                <li><a href="project_details.html">Project Details</a></li>
+                                <li><router-link class="" to="">Project</router-link></li>
+                                <li><router-link class="" to="">Projects Details</router-link></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children">
@@ -41,14 +43,7 @@
                                 <li><a href="erorr.html">Erorr</a></li>
                             </ul>
                         </li>
-                        <li class="menu-item-has-children">
-                            <a href="#">Blog</a>
-                            <ul class="sub-menu">
-                                <li><a href="blog.html">Blog</a></li>
-                                <li><a href="blog_details.html">Blog Details</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><router-link class="" to="/cantact">Contact Us</router-link></li>
 
                         <!------- search popup start ------->
                         <!-- <li>
@@ -66,9 +61,9 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="mobile_menu_logo text-center">
-                    <a href="index.html" title="logo">
-                        <img src="/images/logo.png" alt="Logo" />
-                    </a>
+                    <router-link to="/">
+                        <img src="/images/logo.png" alt="logo">
+                    </router-link>
                 </div>
             </div>
         </div>
@@ -79,20 +74,20 @@
     <div class="menu_area mobile-menu">
         <nav class="mobile_menu">
             <ul class="sub-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><router-link to="/" class="active">Home</router-link></li>
+                <li><router-link to="/about" class="">About</router-link></li>
                 <li class="menu-item-has-children">
                     <a href="#">Service</a>
                     <ul class="sub-menu">
-                        <li><a href="service.html">Service</a></li>
-                        <li><a href="service_details.html">Service Details</a></li>
+                        <li><router-link to="" class="">Service</router-link></li>
+                        <li><router-link to="" class="">Service Details</router-link></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children">
                     <a href="#">Project</a>
                     <ul class="sub-menu">
-                        <li><a href="project.html">Project</a></li>
-                        <li><a href="project_details.html">Project Details</a></li>
+                        <li><router-link to="" class="">Projects</router-link></li>
+                        <li><router-link to="" class="">Project Details</router-link></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children">
@@ -111,7 +106,7 @@
                         <li><a href="blog_details.html">Blog Details</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><router-link class="" to="/contact">Contact Us</router-link></li>
             </ul>
         </nav>
     </div>

@@ -9,7 +9,9 @@ useHead({
  <div>
   <page-medium></page-medium>
   <feature />
+  <team />
   <blogPost />
+
  </div>
 </template>
 
