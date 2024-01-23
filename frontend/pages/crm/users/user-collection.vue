@@ -1,6 +1,7 @@
 <script setup>
 definePageMeta({
-  layout: 'auth-layout'
+  layout: 'auth-layout',
+  title: "Website| Users"
 })
 </script>
 <template>
