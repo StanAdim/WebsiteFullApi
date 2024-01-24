@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthUserController extends Controller
 {
+    //registration
     public function registerUser(Request $request){
         $request->validate([
             'name' => 'required|string',
@@ -20,9 +21,10 @@ class AuthUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-        $token = $user->createToken('randomToken')->plainTextToken;
+        $token = $user->createToken($request->email)->plainTextToken;
         return response()->json(['message' => 'Registration successful', 'token'=> $token, 'user' => $user]);
     }
+    //login
     public function login(Request $request){
         $request->validate([
             'email' => 'required|email',
@@ -34,14 +36,17 @@ class AuthUserController extends Controller
         if (!$user || !Hash::check($credentials['password'],$user->password)) {
             return response([
                 'message'=> 'Wrong credentials'
-            ],402);
+            ],405);
         }
-        $token = $user->createToken('randomToken')->plainTextToken;
+        $token = $user->createToken($request->email)->plainTextToken;
         return response()->json(['message' => 'Registration successful', 'token'=> $token, 'user' => $user]);
     }
+    //logout
     public function logout(Request $request)
     {
-        $request->user()->token()->revoke();
-        return response()->json(['message' => 'Logout successful']);
+        $request->user()->currentAccessToken()->delete();
+        return response()->json([
+            'message' => 'User successfully logged out'
+        ], 200);
     }
 }
