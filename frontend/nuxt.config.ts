@@ -1,13 +1,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
-  plugins: [
-  ],
+  modules: ['@nuxtjs/tailwindcss'],
   app: {
     head: {
       title: 'ICT Commission',
