@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 Route::get('/access-message', function (){return response(['message'=>'Access denied']);})->name('login');
-Route::post('/auth/register-user',[AuthUserController::class,'registerUser']);
+Route::post('/auth/register',[AuthUserController::class,'registerUser']);
 Route::post('/auth/login',[AuthUserController::class,'login']);
 
 Route::middleware(['auth:sanctum'])->group(function () {
@@ -28,5 +28,5 @@ Route::middleware(['auth:sanctum'])->group(function () {
 
     //log user out
     Route::post('/auth/logout',[AuthUserController::class,'logout']);
-    
+
 });

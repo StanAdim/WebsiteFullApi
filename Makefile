@@ -14,5 +14,7 @@ data:
 	docker exec ictc-backend bash -c "php artisan migrate:fresh --seed"
 bash:
 	docker exec -it ictc-backend bash
+logs: 
+	docker logs -f ictc-backend
 start:
 	docker compose restart

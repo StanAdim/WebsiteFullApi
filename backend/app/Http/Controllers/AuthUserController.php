@@ -6,16 +6,24 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class AuthUserController extends Controller
 {
     //registration
     public function registerUser(Request $request){
-        $request->validate([
+        $validator = Validator::make($request->all(),[
             'name' => 'required|string',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8',
         ]);
+        if ($validator->fails())
+            {
+             return response()->json([
+              'message' => 'Validation fails',
+              'errors' => $validator->errors()
+            ],422);
+            }
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -36,7 +44,7 @@ class AuthUserController extends Controller
         if (!$user || !Hash::check($credentials['password'],$user->password)) {
             return response([
                 'message'=> 'Wrong credentials'
-            ],405);
+            ],401);
         }
         $token = $user->createToken($request->email)->plainTextToken;
         return response()->json(['message' => 'Registration successful', 'token'=> $token, 'user' => $user]);
