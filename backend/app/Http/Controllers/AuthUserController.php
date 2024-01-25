@@ -10,6 +10,14 @@ use Illuminate\Support\Facades\Validator;
 
 class AuthUserController extends Controller
 {
+    //users
+    public function index(){
+        $users = User::latest()->get();
+        return response()-> json([
+            'message'=> 'System Users',
+            'data'=> $users
+        ]);
+    }
     //registration
     public function registerUser(Request $request){
         $validator = Validator::make($request->all(),[
@@ -42,12 +50,25 @@ class AuthUserController extends Controller
         //Checking User
         $user = User::where('email',$credentials['email'])->first();
         if (!$user || !Hash::check($credentials['password'],$user->password)) {
-            return response([
+            return response()->json([
                 'message'=> 'Wrong credentials'
-            ],401);
+            ]);
         }
         $token = $user->createToken($request->email)->plainTextToken;
         return response()->json(['message' => 'Registration successful', 'token'=> $token, 'user' => $user]);
+    }
+    //Auth user
+    public function getAuthUser(){
+        $user = Auth::user();
+        if($user){
+            return response()->json([
+                'message'=> 'Logged in user',
+                'data'=> $user
+            ]);
+        }
+        return response()->json([
+            'message'=> 'Please login first'
+        ]);
     }
     //logout
     public function logout(Request $request)
